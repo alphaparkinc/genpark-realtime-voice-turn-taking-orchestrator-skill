@@ -1,0 +1,48 @@
+{
+  "name": "genpark-realtime-voice-turn-taking-orchestrator-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Sub-100ms conversational turn-taking, VAD energy detection, and acoustic barge-in interruption handler for real-time speech agents.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "voice-ai",
+  "tags": [
+    "realtime-voice",
+    "cartesia-sonic",
+    "turn-taking",
+    "vad-detection",
+    "barge-in-interruption"
+  ],
+  "inputs": {
+    "vad_energy_db": {
+      "type": "number",
+      "default": -18.4
+    },
+    "silence_duration_ms": {
+      "type": "integer",
+      "default": 280
+    },
+    "agent_speaking": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "outputs": {
+    "orchestration_id": {
+      "type": "string"
+    },
+    "turn_action": {
+      "type": "string"
+    },
+    "acoustic_barge_in_detected": {
+      "type": "boolean"
+    },
+    "latency_budget_ms": {
+      "type": "integer"
+    },
+    "session_telemetry_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
